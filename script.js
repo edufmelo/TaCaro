@@ -116,12 +116,33 @@ function pressButton() {
     }
 }
 
+// Função auxiliar para travar em 2 casas decimais
+function limitDecimalPlaces(e) {
+    let target = e.target;
+    // Pega o valor atual
+    let value = target.value;
+    
+    // Se tiver ponto decimal
+    if (value.indexOf('.') >= 0) {
+        // Separa antes e depois do ponto
+        let parts = value.split('.');
+        
+        // Se a parte decimal for maior que 2 dígitos, corta o excedente
+        if (parts[1].length > 2) {
+            target.value = parts[0] + '.' + parts[1].substring(0, 2);
+        }
+    }
+}
+
 // --- 4. EVENTOS ---
 euroInput.addEventListener('input', calculateEuroToReal);
 feeInput.addEventListener('input', calculateEuroToReal);
 
 realInput.addEventListener('input', calculateRealToEuro);
 feeInput2.addEventListener('input', calculateRealToEuro);
+
+euroInput.addEventListener('input', limitDecimalPlaces);
+realInput.addEventListener('input', limitDecimalPlaces);
 
 // Iniciar
 fetchRate();

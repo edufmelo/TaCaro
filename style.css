@@ -116,6 +116,7 @@ input[type="number"]:focus {
 
 /* Bandeiras/Moeda */
 .flag { 
+    color:#000427;
     position: absolute;
     right: 40px; /* Distância da direita (pode ajustar esse se quiser mais perto/longe) */
     
