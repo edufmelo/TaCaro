@@ -1,0 +1,222 @@
+/* --- RESET E BASE --- */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    font-family: 'Poppins', sans-serif; 
+}
+
+body {
+    background: linear-gradient(120deg, #000427 0%, #000744 50%,#000427 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    color: #ffffff;
+}
+
+/* --- CARD PRINCIPAL (GLASSMORPHISM REFINADO) --- */
+.converter {
+    background: rgba(255, 255, 255, 0.7); /* Mais transparente */
+    backdrop-filter: blur(20px); /* Mais desfoque no fundo */
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 30px; /* Bordas bem redondas */
+    border: 1px solid rgba(255, 255, 255, 0.8); /* Borda branca sutil */
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15); /* Sombra suave para flutuar */
+    padding: 2.5rem;
+    width: 100%;
+    max-width: 420px;
+    position: relative;
+    overflow: hidden; /* Para brilhos internos */
+}
+
+/* Título */
+h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #e0e0e0;
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* --- BOTÃO DE INVERTER (Moderno e Flutuante) --- */
+.btn-conversor {
+    display: block;
+    margin: 0 auto 1.5rem auto;
+    background: rgb(0, 74, 105); 
+    color: white;
+    border: 2px solid rgb(129, 129, 209);
+    padding: 12px 25px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border-radius: 50px; /* Formato Pílula */
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(2, 2, 108, 0.458); /* Sombra colorida */
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-conversor:hover {
+    transform: translateY(-2px); /* Sobe um pouquinho */
+    box-shadow: 0 15px 25px rgba(3, 34, 137, 0.4);
+}
+
+.btn-conversor:active {
+    transform: translateY(1px);
+}
+
+/* --- INPUTS (Estilo Mobile App) --- */
+.input-group {
+    margin-bottom: 1.5rem;
+}
+
+.input-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.6rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #d3d3d3;
+    margin-left: 5px;
+}
+
+.extra {
+    margin-left: 0;
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 18px 20px;
+    border-radius: 16px;
+    border: 2px solid transparent; /* Borda invisível por padrão */
+    font-size: 1.6rem;
+    font-weight: 600;
+    background: #ffffff;
+    color: #333;
+    outline: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05); /* Sombra interna leve */
+}
+
+input[type="number"]:focus {
+    border-color: #764ba2; /* Borda roxa ao clicar */
+    box-shadow: 0 5px 20px rgba(118, 75, 162, 0.15);
+}
+
+/* Bandeiras/Moeda */
+.flag { 
+    position: absolute;
+    right: 40px; /* Distância da direita (pode ajustar esse se quiser mais perto/longe) */
+    
+    /* O SEGREDO DO ALINHAMENTO VERTICAL PERFEITO: */
+    top: 50%; 
+    transform: translateY(-50%);
+    
+    /* Resetando estilos que não precisamos mais */
+    font-size: 1.5rem; /* Ajustei para ficar legível */
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 0; /* Remove altura de linha fantasma */
+}
+
+/* --- ÁREA DE TAXAS --- */
+.taxes-section {
+    margin-top: 1rem;
+    background: rgba(187, 187, 187, 0.5); /* Fundo sutil */
+    padding: 15px;
+    border-radius: 16px;
+    border: 1px solid rgba(255,255,255,0.6);
+}
+
+.taxes-section .input-group {
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.taxes-section input[type="number"] {
+    width: 100px;
+    padding: 8px 12px;
+    font-size: 1rem;
+    border-radius: 10px;
+    text-align: right;
+}
+
+.p-bank {
+    font-size: 0.75rem;
+    color: #d8d8d8;
+    margin-top: 8px;
+    text-align: right;
+}
+
+/* --- RESULTADO (O destaque) --- */
+.result-box {
+    background: linear-gradient(135deg, #ffffff 0%, #f3f3f3 100%);
+    padding: 25px;
+    border-radius: 20px;
+    text-align: center;
+    margin-top: 2rem;
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.03); /* Sombra interna para profundidade */
+    border: 1px solid white;
+}
+
+.result-box label {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #888;
+    margin-bottom: 5px;
+}
+
+.result-value {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #27ae60; /* Verde Dinheiro Vibrante */
+    text-shadow: 0 2px 10px rgba(39, 174, 96, 0.2);
+}
+
+/* --- RODAPÉ --- */
+.footer-info {
+    text-align: center;
+    margin-top: 1.5rem;
+    font-size: 0.75rem;
+    color: #bdbdbd;
+    opacity: 0.8;
+}
+
+.warning-text {
+    color: #ff4757; /* Vermelho suave */
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-top: 8px;
+    display: none; /* Escondido por padrão */
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Animaçãozinha de carregamento */
+@keyframes pulse {
+    0% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+.loading { 
+    animation: pulse 1s infinite alternate;
+}
